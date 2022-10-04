@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRoutesThunk } from '../../redux/actions/getRoutesAction';
+import usePagination from '../hooks/usePaginations';
+import Pagination from '../Pagination/Pagination';
+import styles from './Table.module.css';
 
 function Table() {
   const routes = useSelector((store) => store.routes);
@@ -10,30 +13,50 @@ function Table() {
     dispatch(getRoutesThunk());
   }, []);
 
-  console.log(routes);
+  const {
+    firstIndex,
+    lastIndex,
+    nextPage,
+    prevPage,
+    page,
+    setPage,
+    totalPages,
+  } = usePagination({
+    contentPerPage: 4,
+    count: routes.length,
+  });
 
   return (
     <>
-      <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">Дата</th>
-            <th scope="col">Название</th>
-            <th scope="col">Количество</th>
-            <th scope="col">Расстояние</th>
-          </tr>
-        </thead>
-        <tbody>
-          {routes.map((obj) => (
-            <tr>
-              <td>{obj.date}</td>
-              <td>{obj.name}</td>
-              <td>{obj.count}</td>
-              <td>{obj.distance}</td>
+      <div className={`${styles.container}`}>
+        <table className={`${styles.mainTable} table`}>
+          <thead>
+            <tr className={`${styles.thColor}`}>
+              <th scope="col" className={`${styles.th}`}>Дата</th>
+              <th scope="col" className={`${styles.th}`}>Название</th>
+              <th scope="col" className={`${styles.th}`}>Количество</th>
+              <th scope="col" className={`${styles.th}`}>Расстояние</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {routes.slice(firstIndex, lastIndex).map((obj) => (
+              <tr key={obj.id} className={`${styles.tdColor}`}>
+                <td className={`${styles.th}`}>{obj.date}</td>
+                <td className={`${styles.th}`}>{obj.name}</td>
+                <td className={`${styles.th}`}>{obj.count}</td>
+                <td className={`${styles.th}`}>{obj.distance}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <Pagination
+          prevPage={prevPage}
+          nextPage={nextPage}
+          setPage={setPage}
+          totalPages={totalPages}
+          page={page}
+        />
+      </div>
     </>
   );
 }

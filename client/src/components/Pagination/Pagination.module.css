@@ -1,0 +1,23 @@
+.btn {
+  color: black;
+  border: 1px solid black;
+  background-color: beige;
+  border-radius: 10%;
+  margin-left: 2px;
+}
+
+.btnPage[value=false] {
+  color: black;
+  border: 1px solid black;
+  background-color: beige;
+  border-radius: 10%;
+  margin-left: 2px;
+}
+
+.btnPage[value=true] {
+  color: black;
+  border: 1px solid black;
+  background-color: aquamarine;
+  border-radius: 10%;
+  margin-left: 2px;
+}
