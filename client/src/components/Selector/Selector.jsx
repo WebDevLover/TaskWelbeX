@@ -4,7 +4,7 @@ import useFilter from '../hooks/useFilter';
 import styles from './Selector.module.css';
 
 // Компонент выпадающих списков и поля ввода
-function Selector({ routes, setList }) {
+function Selector({ routes, setList, setPage }) {
   // Состояния имени поля по котороому будет происходить фильтрация данных
   const [selectInput, setSelectInput] = useState('');
 
@@ -12,7 +12,7 @@ function Selector({ routes, setList }) {
   const {
     changeHandler, filterHandler,
     selectFilter, setSelectFilter
-  } = useFilter({ routes, setList, selectInput });
+  } = useFilter({ routes, setList, selectInput, setPage });
 
   return (
     <div className={`${styles.container}`}>

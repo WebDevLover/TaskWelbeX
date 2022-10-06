@@ -89,7 +89,7 @@ function Table() {
           page={page}
         />
       </div>
-      <Selector routes={routes} setList={setList} />
+      <Selector routes={routes} setList={setList} setPage={setPage} />
     </div>
   );
 }
