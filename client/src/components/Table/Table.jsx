@@ -49,6 +49,7 @@ function Table() {
   // Логика назначения динамеского состояния данных из состояния routes
   const allDataHandler = () => {
     setList(routes);
+    setPage(1);
   };
 
   return (
