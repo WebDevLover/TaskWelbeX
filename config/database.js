@@ -4,13 +4,13 @@ module.exports = {
 
   // Раскоментировать, и указать свои данные для запуска локально
  
-  development: {
-    username: "intro_user",
-    password: "intro_user",
-    database: "taskWelbex",
-    host: "127.0.0.1",
-    dialect: "postgres"
-  },
+  // development: {
+  //   username: "Пользователь вашей БД",
+  //   password: "Пароль вашего пользователя БД",
+  //   database: "Название вашей БД",
+  //   host: "127.0.0.1",
+  //   dialect: "postgres"
+  // },
 
   production: {
     username: process.env.DB_USER,
