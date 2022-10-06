@@ -1,14 +1,19 @@
 import { useState } from 'react';
 
 const usePagination = ({ contentPerPage, count }) => {
+  // Состояния страницы на которой находится клиент
   const [page, setPage] = useState(1);
 
+  // Логика расчета количества страниц
   const pageCount = Math.ceil(count / contentPerPage);
 
+  // Последний индекс элемента массива который будет находится на одной странице
   const lastIndex = page * contentPerPage;
 
+  // Начальный индекс элемента массива который будет находится на одной странице
   const firstIndex = lastIndex - contentPerPage;
 
+  // Логика назначения страницы
   const changePage = (direction) => {
     setPage((state) => {
       if (direction) {
@@ -24,6 +29,7 @@ const usePagination = ({ contentPerPage, count }) => {
     });
   };
 
+  // Логика предотвращающая ошибки при назначении страницы
   const setPageSAFE = (num) => {
     if (num > pageCount) {
       setPage(pageCount);

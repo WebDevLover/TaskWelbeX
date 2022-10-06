@@ -6,6 +6,10 @@
   margin-left: 2px;
 }
 
+.btn:hover {
+  background-color: aquamarine;
+}
+
 .btnPage[value=false] {
   color: black;
   border: 1px solid black;
@@ -20,4 +24,8 @@
   background-color: aquamarine;
   border-radius: 10%;
   margin-left: 2px;
+}
+
+.btnPage:hover {
+  background-color: aquamarine;
 }

@@ -1,7 +1,11 @@
-.container {
+.mainContainer {
   position: relative;
-  top: 10vh;
-  left: 5vw;
+  top: 7vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,5 +27,22 @@
 .mainTable {
   border-collapse: collapse;
   border: 2px solid black;
+}
+
+.btnSort {
+  background-color: aquamarine;
+  border: 0px
+}
+
+.btnViewAll {
+  color: black;
+  border: 1px solid black;
+  background-color: beige;
+  border-radius: 4%;
+  margin-bottom: 5px;
+}
+
+.btnViewAll:hover {
+  background-color: aquamarine;
 }
 

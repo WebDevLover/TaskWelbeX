@@ -1,5 +1,7 @@
+// Action, который отправляется в reducer и меняет state(состояние)
 export const getRoutesAC = (payload) => ({ type: 'GET_ROUTES', payload });
 
+// Thunk, которая после успешного запроса отправляет Action, который меняет state(состояние)
 export const getRoutesThunk = () => async (dispatch) => {
   try {
     const response = await fetch('http://localhost:3001/routes', { method: 'GET' });
