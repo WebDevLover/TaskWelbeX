@@ -14,7 +14,6 @@ const useFilter = ({ routes, setList, selectInput, setPage }) => {
       ...selectFilter,
       value: e.target.value
     });
-    setPage(1);
   };
 
   // Логика филтрации
@@ -60,6 +59,7 @@ const useFilter = ({ routes, setList, selectInput, setPage }) => {
     default:
       break;
     }
+    setPage(1);
   };
 
   return {
