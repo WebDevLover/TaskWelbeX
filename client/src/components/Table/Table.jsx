@@ -1,3 +1,4 @@
+import styles from './Table.module.css';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRoutesThunk } from '../../redux/actions/getRoutesAction';
@@ -5,7 +6,6 @@ import usePagination from '../hooks/usePaginations';
 import useSort from '../hooks/useSort';
 import Pagination from '../Pagination/Pagination';
 import Selector from '../Selector/Selector';
-import styles from './Table.module.css';
 
 // Компонент таблицы данных
 function Table() {

@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
+import styles from './Selector.module.css';
 import React, { useState } from 'react';
 import useFilter from '../hooks/useFilter';
-import styles from './Selector.module.css';
 
 // Компонент выпадающих списков и поля ввода
 function Selector({ routes, setList, setPage }) {
