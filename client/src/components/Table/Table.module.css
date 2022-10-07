@@ -38,8 +38,8 @@
 .btnViewAll {
   color: black;
   border: 1px solid black;
+  border-radius: 7px/7px;
   background-color: beige;
-  border-radius: 4%;
   margin-bottom: 5px;
 }
 
