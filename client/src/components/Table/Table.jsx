@@ -15,6 +15,7 @@ function Table() {
   // Динамическое состояние данных
   const [list, setList] = useState([]);
 
+  // Хук отвечающий за Функцию, которая дёргает  Фсешщт
   const dispatch = useDispatch();
 
   // Хук отвечающий за отправку Thunk для запроса в БД
@@ -54,6 +55,7 @@ function Table() {
 
   return (
     <div className={`${styles.mainContainer}`}>
+      <Selector routes={routes} setList={setList} setPage={setPage} pages={totalPages} />
       <div className={`${styles.container}`}>
         <table className={`${styles.mainTable} table`}>
           <thead>
@@ -90,7 +92,6 @@ function Table() {
           page={page}
         />
       </div>
-      <Selector routes={routes} setList={setList} setPage={setPage} />
     </div>
   );
 }

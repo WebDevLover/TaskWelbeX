@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
 import { useState } from 'react';
 
-const useFilter = ({ routes, setList, selectInput, setPage }) => {
+const useFilter = ({ routes, setList, selectInput, setPage, pages }) => {
   // Состояние имени фильтра и значения поля ввода
   const [selectFilter, setSelectFilter] = useState({
     name: '',
@@ -59,7 +59,7 @@ const useFilter = ({ routes, setList, selectInput, setPage }) => {
     default:
       break;
     }
-    setPage(1);
+    if (pages) setPage(1);
   };
 
   return {

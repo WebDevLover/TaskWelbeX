@@ -17,6 +17,7 @@ app.route('/routes')
       const routes = await Route.findAll();
       res.status(200).json(routes)
     } catch (error) {
+      console.log(error);
       res.status(500).json({ message: 'server error' })
     }
   })

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import useFilter from '../hooks/useFilter';
 
 // Компонент выпадающих списков и поля ввода
-function Selector({ routes, setList, setPage }) {
+function Selector({ routes, setList, setPage, pages }) {
   // Состояния имени поля по котороому будет происходить фильтрация данных
   const [selectInput, setSelectInput] = useState('');
 
@@ -12,7 +12,7 @@ function Selector({ routes, setList, setPage }) {
   const {
     changeHandler, filterHandler,
     selectFilter, setSelectFilter
-  } = useFilter({ routes, setList, selectInput, setPage });
+  } = useFilter({ routes, setList, selectInput, setPage, pages });
 
   return (
     <div className={`${styles.container}`}>
@@ -38,7 +38,7 @@ function Selector({ routes, setList, setPage }) {
           </select>
           {selectFilter.name ? (
             <form onSubmit={filterHandler} className={`${styles.form}`}>
-              <input onChange={changeHandler} type="text" value={selectFilter.value} />
+              <input onChange={changeHandler} type="text" value={selectFilter.value} className={`${styles.input}`} />
               <button type="submit" className={`${styles.btn}`}>Поиск</button>
             </form>
           ) : <p className={`${styles.alertInput}`}>Выберите способ фильтрации</p> }
