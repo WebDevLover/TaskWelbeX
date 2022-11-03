@@ -11,7 +11,7 @@ import Selector from '../Selector/Selector';
 function Table() {
   // Изначалная состояние данных, не изменяется при логике сортировки и фильтрации
   const routes = useSelector((store) => store.routes);
-
+  
   // Динамическое состояние данных
   const [list, setList] = useState([]);
 
@@ -50,7 +50,6 @@ function Table() {
   // Логика назначения динамеского состояния данных из состояния routes
   const allDataHandler = () => {
     setList(routes);
-    setPage(1);
   };
 
   return (
